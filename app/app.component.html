@@ -1,0 +1,31 @@
+<h1 class="text-center">URL Shortner API
+</h1>
+<br>
+<button 
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        (click)="changeMode()">
+        Toggle Mode ({{ encryptMode ? "Encryption" : "Decryption" }})
+</button>
+<br>
+<div class="form-group">
+  <label for="txtTextToConvert">{{ encryptMode ? "Plain" : "Encrypted" }} url</label>
+ <input 
+          type="text"
+          class="form-control"
+          id="txtTextToConvert"
+          placeholder="Enter text you want to {{ encryptMode ? 'encrypt' : 'decrypt' }}"       
+          [(ngModel)]="textToConvert"
+  >
+</div>
+
+
+
+
+
+
+
+<textarea class="form-control" readonly rows="3">
+        {{conversionOutput}}</textarea>
+<br>
+<button type="button" class="btn btn-success" (click)="convertText()">{{ encryptMode ? "Encrypt" : "Decrypt" }}</button>
